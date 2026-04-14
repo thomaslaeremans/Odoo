@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+// ─── Bootstrap variable overrides ───────────────────────────────────────────
+$primary: #0389ff;
+$font-family-base: 'Inter', sans-serif;
+
+// ─── Custom color variables ──────────────────────────────────────────────────
+$color-dark:    #1f1245;
+$color-green:   #55c8a3;
+$color-yellow:  #febd3c;
+$color-light:   #fafbff;
+
+// ─── Custom color map ────────────────────────────────────────────────────────
+$custom-colors: (
+  "purple":    $color-dark,
+  "green":     $color-green,
+  "yellow":    $color-yellow,
+  "lightblue": $color-light,
+);
+
+// ─── Generate bg-* and text-* utility classes from map ──────────────────────
+@each $name, $value in $custom-colors {
+  .bg-#{$name} {
+    background-color: $value;
+  }
+  .text-#{$name} {
+    color: $value;
+  }
+}
+
+// ─── Typography ─────────────────────────────────────────────────────────────
+.text-xs {
+  font-size: 0.7rem;
+}
+
+// ─── Hero ────────────────────────────────────────────────────────────────────
+.hero {
+  clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+  padding-bottom: 8rem;
+
+  &-title {
+    font-size: 2.5rem;
+
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+}
+
+// ─── Awards ──────────────────────────────────────────────────────────────────
+.awards {
+  clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+
+  &-scroll {
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.award-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  }
+}
+
+// ─── Footer ──────────────────────────────────────────────────────────────────
+.footer {
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+}
+
+// ─── Accordion ───────────────────────────────────────────────────────────────
+.accordion {
+  &-item,
+  &-item:last-of-type,
+  &-item:first-of-type {
+    border: none !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  &-button,
+  &-button:not(.collapsed) {
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $color-dark !important;
+  }
+
+  &-button::after,
+  &-button:not(.collapsed)::after {
+    background-image: none !important;
+    font-family: "bootstrap-icons";
+    font-size: 1rem;
+    transform: none !important;
+  }
+
+  &-button::after {
+    content: "\F4FE";
+    opacity: 0.5;
+  }
+
+  &-button:not(.collapsed)::after {
+    content: "\F2EA";
+  }
+}
+
+// ─── Smooth scroll ───────────────────────────────────────────────────────────
+html {
+  scroll-behavior: smooth;
+}
