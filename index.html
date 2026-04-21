@@ -82,14 +82,14 @@
                         <p class="text-black fw-bold small mb-0">Manage cards</p>
                         <button class="btn btn-outline-light text-dark ms-auto text-xs fw-semibold">Add new</button>
                     </div>
-                    <div class="bg-purple rounded p-4 mt-3">
+                    <div class="bg-purple rounded p-4 mt-3 card-texture">
                         <div class="d-flex justify-content-between">
                             <img src="images/mastercard.svg" alt="logo mastercard">
                             <span class="badge text-bg-success p-2">Active</span>
                         </div>
                         <div class="mt-4">
                             <p class="text-uppercase opacity-75 text-xs mb-2">Card number</p>
-                            <p class="lh-1 fw-medium text-nowrap" style="font-size: clamp(0.8rem, 2vw, 1.1rem);">4358 -
+                            <p class="lh-1 fw-medium text-nowrap" style="font-size: clamp(0.8rem, 2vw, 1.2rem);">4358 -
                                 7421 - 9256 - 6682</p>
                         </div>
 
@@ -127,11 +127,20 @@
         </div>
     </section>
 
+    <!-- Wrapper voor gebogen connector lijn -->
+    <div class="sections-wrapper position-relative">
+
+        <!-- SVG gebogen stippellijn -->
+        <svg class="connector-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 35 10 C 35 12, 65 18, 65 30 C 65 42, 35 48, 35 60 C 35 72, 75 68, 65 90 C 55 96, 50 100, 50 100"
+                  fill="none" stroke="#f1f3f5" stroke-width="2" stroke-dasharray="6 4" vector-effect="non-scaling-stroke"/>
+        </svg>
+
     <!-- Section: We build for designers -->
     <section class="py-5">
         <div class="container col-10 col-lg-8 py-4">
             <div class="row align-items-center">
-                <div class="col-6 mb-4 mb-lg-0 position-relative" style="height: 380px;">
+                <div class="col-12 col-lg-6 mb-4 mb-lg-0 position-relative order-2 order-lg-1" style="height: 380px;">
 
                     <!-- Witte kaart linksonder -->
                     <div class="bg-white rounded-3 shadow-sm p-4 position-absolute" style="bottom: 0; left: 0; width: 80%; z-index: 1;">
@@ -154,7 +163,7 @@
                     </div>
 
                     <!-- Afbeelding rechtsbovenaan -->
-                    <div class="position-absolute rounded-3 overflow-hidden" style="top: 0; right: 0; width: 60%; z-index: 2;">
+                    <div class="position-absolute rounded-3 overflow-hidden designer-img" style="top: 0; right: 0; z-index: 2;">
                         <img src="images/img_01.jpg" alt="Designers" class="img-fluid w-100" style="object-fit: cover; height: 240px;">
                         <button class="btn btn-light btn-sm position-absolute top-0 end-0 m-3 rounded px-3 text-xs fw-medium">
                             Play video <i class="bi bi-play ms-1"></i>
@@ -162,7 +171,7 @@
                     </div>
 
                 </div>
-                <div class="col-lg-6 ps-lg-5">
+                <div class="col-lg-6 ps-lg-5 order-1 order-lg-2">
                     <span class="badge text-bg-warning mb-3 rounded-pill text-white p-2">Tools</span>
                     <h2 class="fw-bold mb-3">We build for designers and developers</h2>
                     <p class="text-muted">Get components and examples, including tons of variables that will help you
@@ -206,7 +215,7 @@
             <div class="row align-items-center">
 
                 <!-- Linker kolom: overlappende kaarten -->
-                <div class="col-lg-6 mb-5 mb-lg-0 position-relative" style="height: 460px;">
+                <div class="col-lg-6 mb-5 mb-lg-0 position-relative order-2 order-lg-1 mt-4 mt-lg-0" style="height: 460px;">
 
                     <!-- Persoon foto + naam (1 card) + components -->
                     <div class="position-absolute" style="left: 0; top: 0; width: 48%;">
@@ -262,7 +271,7 @@
                 </div>
 
                 <!-- Rechter kolom: tekst -->
-                <div class="col-lg-6 ps-lg-5">
+                <div class="col-lg-6 ps-lg-5 order-1 order-lg-2">
                     <span class="badge text-bg-primary rounded-pill mb-3 p-2">Technology</span>
                     <h2 class="fw-bold mb-3 text-purple">We use the latest technologies on the market</h2>
                     <p class="text-muted lh-lg mb-3">Get components and examples, including tons of variables that will help you grow your business.</p>
@@ -322,6 +331,8 @@
             </div>
         </div>
     </section>
+
+    </div><!-- end sections-wrapper -->
 
     <!-- Awards -->
     <section id="awards" class="awards py-5 bg-lightblue">
